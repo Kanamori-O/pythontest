@@ -1,4 +1,5 @@
 import random
+import time
 
 # numAzar=random.randint(1,30)
 # print(numAzar)
@@ -21,10 +22,10 @@ import random
 
 # # Ruleta rusa
 
-# barril=random.randit(1,6)
+# barril=random.randint(1,6)
 # rul=int(input('Dispare : '))
 # while rul!=barril:
-#     rul=int(input('Dispare'))
+#     rul=int(input('Dispare '))
 # print('BANG!!!')
 
 # La Florida 20%, La pintana 30%, Puente Alto 25%, San Joaquin 15%
@@ -75,3 +76,61 @@ El total a pagar es $154.000
 # print(f'Su total con el descuento aplicado es {t3}')
 
 # Ludo
+
+# peso=int(input('Ingrese su peso'))
+# if 70<=peso:
+#     print('Watona morbida')
+# else:
+#     print('Washita rica')
+
+carta=random.randint(1,11)
+dealer=0
+j1=0
+dealer+=carta
+print(f'Primera carta por para el dealer {carta}')
+carta=random.randint(1,11)
+dealer+=carta
+print(f'Segunda carta por para el dealer {carta}')
+print(f'El dealer tiene actualmente {dealer}')
+carta=random.randint(1,11)
+j1+=carta
+print(f'Primera carta para el jugador {carta}')
+carta=random.randint(1,11)
+j1+=carta
+print(f'Segunda carta para el jugador {carta}')
+print(f'El jugador tiene actualmente {j1}')
+robo=int(input('''Usted quiere una carta mas?
+               1.- Deme una carta mas
+               2.- No quiero mas
+               '''))
+if dealer<21:
+    while 2!=robo and j1<=21:
+        carta=random.randint(1,11)
+        print(f'La carta que le salio es {carta}')
+        j1+=carta
+        print(f'El jugador tiene actualmente {j1}')
+        robo=int(input('''Usted quiere una carta mas?
+                   1.- Deme una carta mas
+                   2.- No quiero mas
+                   '''))
+    print(f'El jugador tiene actualmente {j1}')
+    if j1==21:
+        print('El jugador gano con Black Jack')
+    elif j1>=22:
+        print('El jugador se paso y gana la casa')
+    else:
+        while dealer<=21:
+            carta=random.randint(1,11)
+            print(f'La siguiente carta para el dealer es {carta}')
+            dealer+=carta
+            print(f'El dealer tiene actualmente {dealer}')
+            if dealer==21:
+                print('El dealer tiene Black Jack por ende gana la casa')
+            elif j1>dealer:
+                print(f'Gano el jugador con {j1}')
+            else:
+                print('Gana la casa')
+elif dealer>=22:
+    print('Perdio el dealer por haberse pasado de 22')
+elif dealer==21:
+    print('Gano el dealer por haber sacado Black Jack')
