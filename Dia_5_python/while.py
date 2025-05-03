@@ -103,34 +103,41 @@ robo=int(input('''Usted quiere una carta mas?
                1.- Deme una carta mas
                2.- No quiero mas
                '''))
-if dealer<21:
+if j1==21:
+    print('El jugador gano con Black Jack')
+elif dealer<21:
     while 2!=robo and j1<=21:
         carta=random.randint(1,11)
         print(f'La carta que le salio es {carta}')
         j1+=carta
+        if j1>=21:
+            break
         print(f'El jugador tiene actualmente {j1}')
         robo=int(input('''Usted quiere una carta mas?
                    1.- Deme una carta mas
                    2.- No quiero mas
                    '''))
     print(f'El jugador tiene actualmente {j1}')
-    if j1==21:
-        print('El jugador gano con Black Jack')
-    elif j1>=22:
+    if j1>=22:
         print('El jugador se paso y gana la casa')
-    else:
-        while dealer<=21:
+    elif j1==dealer:
+        print('Es un empate, nadie gana')
+    elif dealer>=22:
+        print('Perdio el dealer por haberse pasado de 21')
+    elif dealer==21:
+        print('Gano el dealer por haber sacado Black Jack')
+    elif j1<=21:
+        while dealer<17:
             carta=random.randint(1,11)
             print(f'La siguiente carta para el dealer es {carta}')
             dealer+=carta
             print(f'El dealer tiene actualmente {dealer}')
             if dealer==21:
                 print('El dealer tiene Black Jack por ende gana la casa')
+            elif dealer>=22:
+                print('Perdio el dealer por haberse pasado de 21')
+            elif j1<dealer:
+                print('Gana la casa')
             elif j1>dealer:
                 print(f'Gano el jugador con {j1}')
-            else:
-                print('Gana la casa')
-elif dealer>=22:
-    print('Perdio el dealer por haberse pasado de 22')
-elif dealer==21:
-    print('Gano el dealer por haber sacado Black Jack')
+    
