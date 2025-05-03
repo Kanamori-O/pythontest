@@ -83,7 +83,7 @@ El total a pagar es $154.000
 # else:
 #     print('Washita rica')
 
-carta=random.randint(1,11)
+carta=random.choice([1,2,3,4,5,6,7,8,9,10,10,10,10])
 dealer=0
 j1=0
 dealer+=carta
