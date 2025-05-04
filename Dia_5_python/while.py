@@ -84,21 +84,31 @@ El total a pagar es $154.000
 #     print('Washita rica')
 
 carta=random.choice([1,2,3,4,5,6,7,8,9,10,10,10,10])
+# carta=random.randint(1,11)
 dealer=0
 j1=0
 dealer+=carta
 print(f'Primera carta por para el dealer {carta}')
-carta=random.randint(1,11)
+time.sleep(1)
+carta=random.choice([1,2,3,4,5,6,7,8,9,10,10,10,10])
+# carta=random.randint(1,11)
 dealer+=carta
 print(f'Segunda carta por para el dealer {carta}')
+time.sleep(1)
 print(f'El dealer tiene actualmente {dealer}')
-carta=random.randint(1,11)
+time.sleep(1)
+carta=random.choice([1,2,3,4,5,6,7,8,9,10,10,10,10])
+# carta=random.randint(1,11)
 j1+=carta
 print(f'Primera carta para el jugador {carta}')
-carta=random.randint(1,11)
+time.sleep(1)
+carta=random.choice([1,2,3,4,5,6,7,8,9,10,10,10,10])
+# carta=random.randint(1,11)
 j1+=carta
 print(f'Segunda carta para el jugador {carta}')
+time.sleep(1)
 print(f'El jugador tiene actualmente {j1}')
+time.sleep(1)
 robo=int(input('''Usted quiere una carta mas?
                1.- Deme una carta mas
                2.- No quiero mas
@@ -107,7 +117,8 @@ if j1==21:
     print('El jugador gano con Black Jack')
 elif dealer<21:
     while 2!=robo and j1<=21:
-        carta=random.randint(1,11)
+        carta=random.choice([1,2,3,4,5,6,7,8,9,10,10,10,10])
+        # carta=random.randint(1,11)
         print(f'La carta que le salio es {carta}')
         j1+=carta
         if j1>=21:
@@ -128,7 +139,8 @@ elif dealer<21:
         print('Gano el dealer por haber sacado Black Jack')
     elif j1<=21:
         while dealer<17:
-            carta=random.randint(1,11)
+            carta=random.choice([1,2,3,4,5,6,7,8,9,10,10,10,10])
+            # carta=random.randint(1,11)
             print(f'La siguiente carta para el dealer es {carta}')
             dealer+=carta
             print(f'El dealer tiene actualmente {dealer}')
@@ -136,8 +148,9 @@ elif dealer<21:
                 print('El dealer tiene Black Jack por ende gana la casa')
             elif dealer>=22:
                 print('Perdio el dealer por haberse pasado de 21')
+            elif j1==dealer:
+                print('Es un empate, nadie gana')
             elif j1<dealer:
                 print('Gana la casa')
-            elif j1>dealer:
-                print(f'Gano el jugador con {j1}')
-    
+if j1>dealer and j1<22:
+    print(f'Gano el jugador con {j1}')
