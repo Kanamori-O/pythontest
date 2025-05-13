@@ -83,27 +83,25 @@ El total a pagar es $154.000
 # else:
 #     print('Washita rica')
 
-carta=random.choice([1,2,3,4,5,6,7,8,9,10,10,10,10])
-# carta=random.randint(1,11)
+def carta():
+    carta=random.choice([1,2,3,4,5,6,7,8,9,10,10,10,10])
+    return carta
 dealer=0
 j1=0
-dealer+=carta
 print(f'Primera carta por para el dealer {carta}')
+dealer+=carta
 time.sleep(1)
-carta=random.choice([1,2,3,4,5,6,7,8,9,10,10,10,10])
-# carta=random.randint(1,11)
+carta()
 dealer+=carta
 print(f'Segunda carta por para el dealer {carta}')
 time.sleep(1)
 print(f'El dealer tiene actualmente {dealer}')
 time.sleep(1)
-carta=random.choice([1,2,3,4,5,6,7,8,9,10,10,10,10])
-# carta=random.randint(1,11)
+carta()
 j1+=carta
 print(f'Primera carta para el jugador {carta}')
 time.sleep(1)
-carta=random.choice([1,2,3,4,5,6,7,8,9,10,10,10,10])
-# carta=random.randint(1,11)
+carta()
 j1+=carta
 print(f'Segunda carta para el jugador {carta}')
 time.sleep(1)
@@ -117,8 +115,7 @@ if j1==21:
     print('El jugador gano con Black Jack')
 elif dealer<21:
     while 2!=robo and j1<=21:
-        carta=random.choice([1,2,3,4,5,6,7,8,9,10,10,10,10])
-        # carta=random.randint(1,11)
+        carta()        
         print(f'La carta que le salio es {carta}')
         j1+=carta
         if j1>=21:
@@ -139,8 +136,7 @@ elif dealer<21:
         print('Gano el dealer por haber sacado Black Jack')
     elif j1<=21:
         while dealer<17:
-            carta=random.choice([1,2,3,4,5,6,7,8,9,10,10,10,10])
-            # carta=random.randint(1,11)
+            carta()
             print(f'La siguiente carta para el dealer es {carta}')
             dealer+=carta
             print(f'El dealer tiene actualmente {dealer}')
