@@ -88,11 +88,11 @@ def carta():
     return carta
 dealer=0
 j1=0
-print(f'Primera carta por para el dealer {carta}')
+print(carta())
 dealer+=carta
 time.sleep(1)
 carta()
-dealer+=carta
+dealer+=carta()
 print(f'Segunda carta por para el dealer {carta}')
 time.sleep(1)
 print(f'El dealer tiene actualmente {dealer}')
