@@ -34,12 +34,12 @@ def valida_code(code):
             Minuscula+=1
         if c.isdigit():
             Numero+=1
-        if Mayuscula==2 and Minuscula==2 and Numero==4:
-            print('El codigo que ingreso es valido')
-            return True
-        else:
-            print('El codigo que ingreso no es valido')
-            return False
+    if Mayuscula==2 and Minuscula==2 and Numero==4:
+        print('El codigo que ingreso es valido')
+        return True
+    else:
+        print('El codigo que ingreso no es valido')
+        return False
 
 valida_code('BCaa2024')
 
